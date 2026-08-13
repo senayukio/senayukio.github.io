@@ -641,7 +641,21 @@
   /* ============================ reveals ============================ */
   if("IntersectionObserver" in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -12% 0px",threshold:.12});
-    [].slice.call(document.querySelectorAll(".rv")).forEach(function(n){io.observe(n)});
+    var rvs=[].slice.call(document.querySelectorAll(".rv"));
+    rvs.forEach(function(n){io.observe(n)});
+    /* Quem entra por link direto (#produtos) ou volta para a aba com o scroll
+       restaurado — no celular isso é a regra, não a exceção — nunca vê o
+       observer disparar para o que já ficou acima. Sem isso esse conteúdo
+       fica invisível para sempre. Só o que já passou; o resto anima normal. */
+    function revelaOQuePassou(){
+      rvs.forEach(function(n){
+        if(!n.classList.contains("in") && n.getBoundingClientRect().bottom<=0){
+          n.classList.add("in");io.unobserve(n);
+        }
+      });
+    }
+    requestAnimationFrame(revelaOQuePassou);
+    window.addEventListener("load",revelaOQuePassou);
   }else{[].slice.call(document.querySelectorAll(".rv")).forEach(function(n){n.classList.add("in")})}
 
   /* ============================ intro ============================ */
