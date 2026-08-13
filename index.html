@@ -148,7 +148,11 @@
   .btn:hover{border-color:var(--amber);color:var(--amber)}
   .btn.pri{background:var(--amber);border-color:var(--amber);color:#05070B;font-weight:700}
   .btn.pri:hover{background:var(--amber-d);border-color:var(--amber-d);color:#fff}
+  .btn.wa{border-color:rgba(37,211,102,.45)}
   .btn.wa:hover{border-color:#25D366;color:#25D366}
+  .btn.ghost{border-color:transparent;color:var(--ink-3);padding:1rem .55rem}
+  .btn.ghost:hover{color:var(--ink);border-color:transparent}
+  .links{align-items:center}
   footer{border-top:1px solid var(--line);padding:2.2rem 0;color:var(--ink-3)}
   footer .wrap{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:space-between}
 
@@ -194,7 +198,7 @@
         <span class="l"><i data-i="h1a">Dos dois lados</i></span>
         <span class="l"><i class="amb" data-i="h1b">da mesa.</i></span>
       </h1>
-      <p class="thesis" data-i="thesis">Defino requisito em japonês com o cliente e entrego com time internacional. Anaplan certificado, arquitetura .NET/Azure, mais de dez anos dentro de empresa japonesa.</p>
+      <p class="thesis" data-i="thesis">A maior parte dos projetos que vi travar não travou no código. Travou entre a sala onde se decide e a sala onde se constrói. Eu trabalho nas duas. Anaplan certificado, arquitetura .NET/Azure, dez anos dentro de empresa japonesa.</p>
       <div class="trio mono"><span><b>日本語</b> nativo</span><span><b>Português</b> nativo</span><span><b>English</b> business</span></div>
       <div class="social" id="social"></div>
     </div>
@@ -250,7 +254,7 @@
       <h2 data-i="ch">O que eu faço</h2>
     </div>
     <div class="caps rv">
-      <div class="cap"><span class="n mono">Anaplan</span><h4 data-i="c1h">Planejamento corporativo</h4><p data-i="c1p">Model Builder certificado. Modelos de alocação de pessoal para montadora e de cadeia de suprimentos para fabricante de equipamentos médicos — requisito, desenho, construção e evolução.</p></div>
+      <div class="cap"><span class="n mono">Anaplan</span><h4 data-i="c1h">Planejamento corporativo</h4><p data-i="c1p">Model Builder certificado. Construí o modelo que decide quantas pessoas vão para cada linha numa montadora, e o que prevê demanda e estoque num fabricante de equipamentos médicos. Do primeiro levantamento até a manutenção.</p></div>
       <div class="cap"><span class="n mono">.NET · Azure</span><h4 data-i="c2h">Arquitetura de sistema</h4><p data-i="c2p">DDD em quatro camadas sobre App Service, Azure SQL e SignalR, com TDD em xUnit. Sistema de alocação de posições de aeronaves para grande companhia aérea japonesa.</p></div>
       <div class="cap"><span class="n mono">JP ↔ Global</span><h4 data-i="c3h">A ponte</h4><p data-i="c3p">Conduzo levantamento direto com o cliente japonês, em japonês, e entrego com time internacional. A maior parte dos projetos que vi falhar falhou nessa junção, não no código.</p></div>
     </div>
@@ -268,14 +272,14 @@
       <a class="prod" href="https://churchmanagerjp.com/" target="_blank" rel="noopener" data-ev="produto" data-v="church">
         <span class="status mono"><span class="dot"></span><span data-i="s1">Em operação</span></span>
         <h3>Church Manager JP</h3>
-        <p data-i="pd1">Gestão de igreja para comunidades estrangeiras no Japão — membros, finanças, atas — e a jornada guiada até o reconhecimento como 宗教法人.</p>
+        <p data-i="pd1">A igreja registra membro, oferta e ata no dia a dia. E o dossiê para virar 宗教法人 vai se montando sozinho — sem preencher nada duas vezes.</p>
         <div class="stack"><span>Laravel 12</span><span>Multi-tenant</span><span>PT / JA / EN</span><span>400+ testes</span></div>
         <span class="go mono">churchmanagerjp.com →</span>
       </a>
       <a class="prod" href="https://toumorokoshihouse.com/" target="_blank" rel="noopener" data-ev="produto" data-v="pos">
         <span class="status mono"><span class="dot"></span><span data-i="s2">Em produção</span></span>
         <h3 data-i="pd2h">POS &amp; ERP de restaurante</h3>
-        <p data-i="pd2">Do caixa à contabilidade: pedido por QR na mesa, impressora térmica, PayPay e Stripe, folha conforme a lei trabalhista japonesa e loja online.</p>
+        <p data-i="pd2">O pedido sai da mesa por QR e chega na cozinha, no caixa e na contabilidade sem ninguém digitar de novo. O mês fecha sozinho, no padrão japonês.</p>
         <div class="stack"><span>.NET 10</span><span>React 19</span><span>DDD</span><span>424 testes</span></div>
         <span class="go mono">toumorokoshihouse.com →</span>
       </a>
@@ -285,7 +289,7 @@
 
 <section class="contact">
   <div class="wrap">
-    <h2 class="rv" data-i="cth">Se o seu problema está entre o Japão e o resto do mundo, me chame.</h2>
+    <h2 class="rv" data-i="cth">Se o seu problema mora entre o Japão e o resto do mundo, é comigo.</h2>
     <div class="links rv" id="ctas"></div>
   </div>
 </section>
@@ -321,6 +325,12 @@
     instagram:"https://www.instagram.com/yukiosena/",
     youtube:"https://www.youtube.com/@YukioSena",
     whatsapp:"https://wa.me/819099451709",
+    /* Assunto e primeira linha já prontos: a folha em branco é o maior atrito de um CTA. */
+    prefill:{
+      pt:{sub:"Projeto",   body:"Oi Flavio. Vi seu site e queria falar sobre "},
+      en:{sub:"Project",   body:"Hi Flavio. I saw your site and wanted to talk about "},
+      ja:{sub:"ご相談",     body:"前川様\n\nサイトを拝見しご連絡しました。ご相談したいのは"}
+    },
     analytics:{ plausible:true, ga4:true, clarity:true, log:false }
   };
 
@@ -373,20 +383,29 @@
     if(CFG.github)   a(CFG.github,"GitHub","","social","github",s);
     if(CFG.instagram)a(CFG.instagram,"Instagram","","social","instagram",s);
     if(CFG.youtube)  a(CFG.youtube,"YouTube","","social","youtube",s);
-    var T={pt:{mail:"Enviar e-mail",wa:"WhatsApp"},en:{mail:"Send an email",wa:"WhatsApp"},ja:{mail:"メールを送る",wa:"WhatsApp"}};
-    var t=T[document.documentElement.lang==="ja"?"ja":(document.documentElement.lang==="en"?"en":"pt")];
-    if(CFG.email)    a("mailto:"+CFG.email,t.mail,"btn pri","cta","email",c);
-    if(CFG.whatsapp) a(CFG.whatsapp,t.wa,"btn wa","cta","whatsapp",c);
-    if(CFG.linkedin) a(CFG.linkedin,"LinkedIn","btn","cta","linkedin",c);
-    if(CFG.github)   a(CFG.github,"GitHub","btn","cta","github",c);
-    if(CFG.instagram)a(CFG.instagram,"Instagram","btn","cta","instagram",c);
-    if(CFG.youtube)  a(CFG.youtube,"YouTube","btn","cta","youtube",c);
+    var T={
+      pt:{mail:"Falar sobre um projeto", wa:"Chamar no WhatsApp"},
+      en:{mail:"Start a conversation",   wa:"Message on WhatsApp"},
+      ja:{mail:"相談してみる",             wa:"WhatsAppで話す"}
+    };
+    var lang=document.documentElement.lang==="ja"?"ja":(document.documentElement.lang==="en"?"en":"pt");
+    var t=T[lang], pf=CFG.prefill[lang];
+    if(CFG.email)
+      a("mailto:"+CFG.email+"?subject="+encodeURIComponent(pf.sub)+"&body="+encodeURIComponent(pf.body),
+        t.mail,"btn pri","cta","email",c);
+    if(CFG.whatsapp)
+      a(CFG.whatsapp+"?text="+encodeURIComponent(pf.body), t.wa,"btn wa","cta","whatsapp",c);
+    /* Redes entram como link discreto, não como botão: seis botões iguais diluem a decisão. */
+    if(CFG.linkedin) a(CFG.linkedin,"LinkedIn","btn ghost","cta","linkedin",c);
+    if(CFG.github)   a(CFG.github,"GitHub","btn ghost","cta","github",c);
+    if(CFG.instagram)a(CFG.instagram,"Instagram","btn ghost","cta","instagram",c);
+    if(CFG.youtube)  a(CFG.youtube,"YouTube","btn ghost","cta","youtube",c);
   }
 
   /* ============================ i18n ============================ */
   var D={pt:{},en:{
-    kicker:"Aichi, Japan · available for remote contract",h1a:"Both sides",h1b:"of the table.",
-    thesis:"I run requirements in Japanese with the client and deliver with an international team. Certified Anaplan Model Builder, .NET/Azure architecture, ten-plus years inside Japanese enterprise.",
+    kicker:"Aichi, Japan · open to remote contract",h1a:"Fluent in",h1b:"both rooms.",
+    thesis:"Ten years inside Japanese enterprise taught me that projects rarely break in the code. They break between the room where the decision is made and the room where it gets built. I work in both.",
     d1tag:"For companies and recruiters",d1h:"Hire me for Anaplan, .NET, or the bridge to Japan",
     d1p:"Certified Model Builder, DDD architecture on Azure, and the rare ability to run requirements definition in Japanese and deliver in English or Portuguese.",d1go:"See capabilities <em>→</em>",
     d2tag:"For business owners",d2h:"Systems for restaurants and churches in Japan",
@@ -396,18 +415,18 @@
     pr3:"days of planning cycle, after I rebuilt it",pr4:"automated tests across the two products I built alone",
     q:"\"Testimonial from the owner of Toumorokoshi House goes here — video or text.\"",qw:"Reserved space · ",qp:"to record",
     k2:"02 — Capabilities",ch:"What I do",
-    c1h:"Enterprise planning",c1p:"Certified Model Builder. Workforce allocation models for a major automotive manufacturer and supply chain planning for a leading medical device maker — requirements, design, build and ongoing evolution.",
-    c2h:"System architecture",c2p:"Four-layer DDD on App Service, Azure SQL and SignalR, with TDD in xUnit. Aircraft stand allocation and prediction system for a major Japanese airline.",
-    c3h:"The bridge",c3p:"I gather requirements directly with the Japanese client, in Japanese, and deliver with an international team. Most failed projects I have seen failed at that seam, not in the code.",
+    c1h:"Enterprise planning",c1p:"Certified Model Builder. I built the model that decides how many people go to each line at a major car maker, and the one that forecasts demand and stock at a medical device maker. From the first interview to the maintenance nobody wants to do.",
+    c2h:"System architecture",c2p:"Four-layer DDD on App Service, Azure SQL and SignalR, tested with xUnit. Most recently: the system that decides which aircraft parks where, for a major Japanese airline.",
+    c3h:"The seam",c3p:"I take the requirements straight from the Japanese client, in Japanese, then build with an international team. That handover is where I have watched most projects quietly fall apart.",
     k3:"03 — Products",prh:"Products I built",prp:"Two vertical SaaS products, written from scratch, for markets Japan forgot.",
     s1:"Live",s2:"In production",pd2h:"Restaurant POS &amp; ERP",
-    pd1:"Church management for foreign communities in Japan — members, finances, minutes — plus a guided path to legal recognition as a religious corporation.",
-    pd2:"From till to books: QR table ordering, thermal printer, PayPay and Stripe, labour-law compliant shifts and an online shop.",
-    cth:"If your problem sits between Japan and the rest of the world, get in touch.",ft:"Aichi, Japan · 2026",
+    pd1:"The church records members, offerings and minutes as it always did. Meanwhile the dossier for legal recognition as a religious corporation builds itself — nothing typed twice.",
+    pd2:"An order leaves the table by QR and lands in the kitchen, the till and the books without anyone retyping it. The month closes itself, to Japanese standards.",
+    cth:"If your problem lives between Japan and everywhere else, that is my job.",ft:"Aichi, Japan · 2026",
     ccp:"I use cookies only to understand how this site is used. No advertising.",ccno:"Decline",ccok:"Accept"
   },ja:{
-    kicker:"愛知県 · フルリモート業務委託 対応可",h1a:"要件定義は日本語で。",h1b:"実装は世界と。",
-    thesis:"日本のお客様と日本語で要件を固め、国際チームで実装します。Anaplanモデルビルダー認定、.NET／Azureアーキテクト、日本企業での実務10年以上。",
+    kicker:"愛知県 · フルリモート業務委託 対応可",h1a:"通じるから、",h1b:"動く。",
+    thesis:"止まる案件のほとんどは、コードではなく言葉で止まります。日本語で要件を固め、国際チームで実装する。Anaplanモデルビルダー認定、.NET／Azureアーキテクト、日本企業での実務10年以上。",
     d1tag:"企業・採用担当の方へ",d1h:"Anaplan・.NET・日本と海外の橋渡し",
     d1p:"モデルビルダー認定、Azure上のDDDアーキテクチャ、そして日本語で要件定義を行い英語・ポルトガル語で実装まで通せる体制。",d1go:"スキルを見る <em>→</em>",
     d2tag:"事業主の方へ",d2h:"日本の飲食店・教会向けシステム",
@@ -417,14 +436,14 @@
     pr3:"日へ短縮した計画サイクル",pr4:"件の自動テスト（単独開発の2製品）",
     q:"「トウモロコシハウス オーナーの推薦コメントをここに（動画またはテキスト）」",qw:"準備中 · ",qp:"収録予定",
     k2:"02 — できること",ch:"できること",
-    c1h:"経営計画基盤",c1p:"モデルビルダー認定。大手自動車メーカー向けの人員配置モデル、大手医療機器メーカー向けのサプライチェーン計画モデルを、要件定義から構築・保守まで一貫して担当。",
-    c2h:"システムアーキテクチャ",c2p:"App Service／Azure SQL／SignalR上のDDD4層構成、xUnitによるTDD。大手航空会社向け駐機スポット割当・予測システム。",
-    c3h:"橋渡し",c3p:"日本のお客様と日本語で要件を固め、国際チームで実装します。失敗する案件の多くは、コードではなくこの接続部分で失敗します。",
+    c1h:"経営計画基盤",c1p:"モデルビルダー認定。どのラインに何人を置くかを決める大手自動車メーカーの人員配置モデル、需要と在庫を読む大手医療機器メーカーのサプライチェーンモデル。最初のヒアリングから、地味な保守まで。",
+    c2h:"システムアーキテクチャ",c2p:"App Service／Azure SQL／SignalR上のDDD4層構成、xUnitでテスト。直近は、どの機がどのスポットに着くかを決める大手航空会社のシステム。",
+    c3h:"継ぎ目",c3p:"日本のお客様から日本語で直接要件を受け、国際チームで実装します。案件が静かに壊れるのは、たいていこの受け渡しの部分です。",
     k3:"03 — 製品",prh:"自分で作った製品",prp:"ゼロから開発した、2つの業種特化SaaS。",
     s1:"稼働中",s2:"本番稼働中",pd2h:"飲食店向けPOS・基幹システム",
-    pd1:"在日外国人コミュニティの教会向け管理システム。会員・会計・議事録に加え、宗教法人の認証取得までを支援します。",
-    pd2:"レジから経営管理まで。QRテーブル注文、サーマルプリンター、PayPay・Stripe、労働法準拠のシフト管理、オンラインショップ。",
-    cth:"日本と海外のあいだにある課題なら、お気軽にご連絡ください。",ft:"愛知県 · 2026",
+    pd1:"会員・献金・議事録を日々記録するだけで、宗教法人の認証に必要な書類が自動で積み上がります。同じことを二度書く必要はありません。",
+    pd2:"QRで席から入った注文が、厨房・レジ・会計まで打ち直しなしで届く。月次はそのまま日本の基準で締まります。",
+    cth:"日本と海外のあいだにある課題。それが私の仕事です。",ft:"愛知県 · 2026",
     ccp:"サイトの利用状況を把握する目的でのみCookieを使用します。広告には使用しません。",ccno:"拒否する",ccok:"同意する"
   }};
   var nodes=[].slice.call(document.querySelectorAll("[data-i]"));
