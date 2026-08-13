@@ -1,0 +1,532 @@
+<title>Flavio Yukio Maekawa Sena — Anaplan Model Builder & .NET Architect | Japão</title>
+<meta name="description" content="Anaplan Model Builder certificado e arquiteto .NET/Azure com mais de 10 anos em empresas japonesas. Japonês e português nativos. Disponível para contrato remoto.">
+<meta name="author" content="Flavio Yukio Maekawa Sena">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Flavio Yukio Maekawa Sena — Dos dois lados da mesa">
+<meta property="og:description" content="Defino requisito em japonês e entrego com time internacional. Anaplan certificado, arquitetura .NET/Azure, 10+ anos em empresa japonesa.">
+<meta property="og:image" content="foto.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05070B">
+
+<!-- Google tag (gtag.js) — consentimento negado por padrão (Consent Mode v2) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{
+    ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied',
+    analytics_storage:'denied', functionality_storage:'granted', security_storage:'granted'
+  });
+  gtag('js', new Date());
+  gtag('config','G-QNMLPBSMQG',{anonymize_ip:true});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QNMLPBSMQG"></script>
+
+<style>
+  :root{
+    --void:#05070B; --deep:#080C13; --panel:#0C1119; --line:#1B2431; --line-2:#26313F;
+    --ink:#F2F5F9; --ink-2:#98A5B6; --ink-3:#5E6B7C;
+    --amber:#FF7A33; --amber-d:#D45A18; --cyan:#5B8FD6;
+    --f-d:"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,"Yu Gothic UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    --f-b:Georgia,"Iowan Old Style","Times New Roman","Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+    --f-m:ui-monospace,"Cascadia Mono","SF Mono",Consolas,"Yu Gothic UI",monospace;
+    --wide:min(1240px,100%); --pad:clamp(1.15rem,5vw,3.5rem);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--void);color:var(--ink);font-family:var(--f-b);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--f-d);margin:0;line-height:1.02;text-wrap:balance}
+  p{margin:0} a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:4px}
+  .wrap{width:var(--wide);margin:0 auto;padding:0 var(--pad)}
+  .mono{font-family:var(--f-m);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase}
+
+  #intro{position:fixed;inset:0;z-index:100;background:var(--void);display:flex;align-items:flex-end;justify-content:space-between;padding:var(--pad);transition:opacity .8s ease,visibility .8s}
+  #intro.done{opacity:0;visibility:hidden}
+  #intro .cnt{font-family:var(--f-d);font-size:clamp(3.5rem,16vw,11rem);font-weight:800;letter-spacing:-.05em;line-height:.8;font-variant-numeric:tabular-nums}
+  #intro .lbl{font-family:var(--f-m);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);text-align:right;line-height:2}
+  #bar{position:fixed;left:0;top:0;height:1px;background:var(--amber);width:0;z-index:101;transition:width .3s linear}
+  #bar.done{opacity:0;transition:opacity .6s .3s}
+
+  .lang{position:fixed;top:1.1rem;right:1.1rem;z-index:60;display:flex;gap:1px;background:var(--line-2);border:1px solid var(--line-2)}
+  .lang button{font-family:var(--f-m);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem .7rem;background:rgba(8,12,19,.85);color:var(--ink-3);border:0;cursor:pointer;transition:.2s;backdrop-filter:blur(6px)}
+  .lang button:hover{color:var(--ink)}
+  .lang button[aria-pressed="true"]{background:var(--amber);color:#05070B;font-weight:700}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+  #field{position:absolute;inset:0;width:100%;height:100%}
+  .vig{position:absolute;inset:0;pointer-events:none;background:
+    radial-gradient(120% 85% at 50% 78%, transparent 25%, rgba(5,7,11,.55) 62%, var(--void) 96%),
+    linear-gradient(to bottom, var(--void) 0%, transparent 22%, transparent 58%, rgba(5,7,11,.92) 100%)}
+  .bars{position:absolute;left:0;right:0;pointer-events:none;height:1px;background:var(--line)}
+  .bars.t{top:calc(var(--pad)*.8)} .bars.b{bottom:calc(var(--pad)*.8)}
+  .hero .wrap{position:relative;z-index:3;padding-top:6rem;padding-bottom:clamp(2.5rem,7vw,4.5rem);display:flex;flex-direction:column;gap:clamp(1.3rem,3vw,2rem);align-items:flex-start}
+  .hcol{display:flex;flex-direction:column;gap:clamp(1rem,2.6vw,1.7rem)}
+  .kick{color:var(--amber);opacity:0;transform:translateY(12px)}
+  .hero h1{font-size:clamp(2.7rem,9vw,7.2rem);font-weight:800;letter-spacing:-.045em;max-width:13ch}
+  .hero h1 .l{display:block;overflow:hidden}
+  .hero h1 .l i{display:block;font-style:normal;transform:translateY(105%)}
+  .hero h1 .amb{color:var(--amber)}
+  .thesis{font-size:clamp(1rem,1.75vw,1.22rem);color:var(--ink-2);max-width:46ch;line-height:1.5;opacity:0;transform:translateY(12px)}
+  .trio{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;color:var(--ink-3);opacity:0;transform:translateY(12px)}
+  .trio b{color:var(--ink);font-weight:400}
+  .social{display:flex;flex-wrap:wrap;gap:.55rem;opacity:0;transform:translateY(12px)}
+  .social a{font-family:var(--f-m);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line-2);padding:.5rem .8rem;transition:.25s;background:rgba(8,12,19,.5);backdrop-filter:blur(4px)}
+  .social a:hover{color:var(--amber);border-color:var(--amber)}
+
+  /* photo — círculo puro, sem moldura quadrada */
+  .shot{position:relative;margin:0;width:clamp(104px,13vw,150px);aspect-ratio:1;border-radius:50%;opacity:0;transform:translateY(16px) scale(.96)}
+  .shot::before{content:"";position:absolute;inset:-58%;border-radius:50%;background:radial-gradient(50% 50% at 50% 50%, rgba(255,122,51,.30), rgba(255,122,51,0) 68%);filter:blur(10px);pointer-events:none}
+  .shot img{position:relative;width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;
+    -webkit-clip-path:circle(50% at 50% 50%);clip-path:circle(50% at 50% 50%);
+    filter:contrast(1.07) saturate(.92)}
+  .shot .ring{position:absolute;inset:-7%;border:1px solid rgba(255,122,51,.28);border-radius:50%;pointer-events:none}
+  .ready .kick,.ready .thesis,.ready .trio,.ready .social,.ready .shot{opacity:1;transform:none;transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+  .ready .kick{transition-delay:.15s} .ready .thesis{transition-delay:.55s}
+  .ready .trio{transition-delay:.68s} .ready .social{transition-delay:.8s} .ready .shot{transition-delay:.4s}
+  .ready h1 .l i{transform:translateY(0);transition:transform 1.05s cubic-bezier(.16,1,.3,1)}
+  .ready h1 .l:nth-child(1) i{transition-delay:.22s} .ready h1 .l:nth-child(2) i{transition-delay:.34s}
+
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  .doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .door{position:relative;padding:clamp(2.2rem,5vw,4rem) var(--pad);display:flex;flex-direction:column;gap:1rem;min-height:clamp(300px,40vh,420px);justify-content:flex-end;overflow:hidden;isolation:isolate}
+  .door + .door{border-left:1px solid var(--line)}
+  .door::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(90% 70% at 22% 108%, rgba(255,122,51,.16), transparent 62%);opacity:0;transition:opacity .6s}
+  .door.b::before{background:radial-gradient(90% 70% at 22% 108%, rgba(91,143,214,.16), transparent 62%)}
+  .door:hover::before{opacity:1}
+  .door .idx{color:var(--ink-3)} .door .tag{color:var(--amber)} .door.b .tag{color:var(--cyan)}
+  .door h3{font-size:clamp(1.5rem,3vw,2.3rem);font-weight:800;letter-spacing:-.028em;max-width:16ch}
+  .door p{color:var(--ink-2);font-size:.98rem;max-width:40ch}
+  .door .go{margin-top:.4rem;color:var(--ink);display:inline-flex;gap:.6rem;align-items:center}
+  .door .go em{font-style:normal;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+  .door:hover .go em{transform:translateX(7px)}
+  @media (max-width:640px){.door + .door{border-left:0;border-top:1px solid var(--line)}}
+
+  section{padding:clamp(4rem,11vw,9rem) 0;position:relative}
+  .head{display:flex;flex-direction:column;gap:.9rem;margin-bottom:clamp(2rem,5vw,3.5rem)}
+  .head h2{font-size:clamp(1.9rem,5.2vw,3.6rem);font-weight:800;letter-spacing:-.035em;max-width:20ch}
+  .head p{color:var(--ink-2);max-width:56ch}
+  .head .mono{color:var(--amber)}
+
+  .proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .pi{background:var(--deep);padding:1.8rem 1.5rem;display:flex;flex-direction:column;gap:.5rem}
+  .pi .num{font-family:var(--f-d);font-size:clamp(2.2rem,5vw,3.1rem);font-weight:800;letter-spacing:-.045em;color:var(--amber);font-variant-numeric:tabular-nums;line-height:.95}
+  .pi .lab{font-size:.9rem;color:var(--ink-2);line-height:1.45}
+
+  /* testimonial */
+  .quote{border:1px solid var(--line);background:var(--deep);padding:clamp(1.8rem,4vw,3rem);display:flex;flex-direction:column;gap:1.2rem;position:relative;overflow:hidden}
+  .quote::after{content:"";position:absolute;inset:auto -20% -70% 40%;height:80%;background:radial-gradient(50% 100% at 50% 100%, rgba(91,143,214,.12), transparent 70%)}
+  .quote blockquote{margin:0;font-family:var(--f-d);font-size:clamp(1.15rem,2.4vw,1.7rem);font-weight:600;letter-spacing:-.02em;line-height:1.35;max-width:34ch}
+  .quote .who{color:var(--ink-3)}
+  .quote .pend{color:var(--amber)}
+
+  .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .cap{background:var(--deep);padding:1.9rem 1.6rem;display:flex;flex-direction:column;gap:.7rem;transition:background .4s}
+  .cap:hover{background:var(--panel)}
+  .cap .n{color:var(--cyan)} .cap h4{font-size:1.18rem;font-weight:700;letter-spacing:-.018em}
+  .cap p{color:var(--ink-2);font-size:.93rem;line-height:1.55}
+
+  .prods{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1.3rem}
+  .prod{position:relative;background:var(--deep);border:1px solid var(--line);padding:clamp(1.6rem,3.2vw,2.4rem);display:flex;flex-direction:column;gap:1rem;overflow:hidden;transition:border-color .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
+  .prod::after{content:"";position:absolute;inset:auto -30% -60% -30%;height:70%;background:radial-gradient(50% 100% at 50% 100%, rgba(255,122,51,.14), transparent 70%);opacity:0;transition:opacity .5s}
+  .prod:hover{border-color:var(--line-2);transform:translateY(-4px)} .prod:hover::after{opacity:1}
+  .prod .status{color:var(--ink-3);display:flex;align-items:center;gap:.55rem}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}
+  .prod h3{font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:800;letter-spacing:-.025em}
+  .prod p{color:var(--ink-2);font-size:.95rem}
+  .stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.15rem}
+  .stack span{font-family:var(--f-m);font-size:.62rem;letter-spacing:.08em;color:var(--ink-3);border:1px solid var(--line-2);padding:.24rem .55rem}
+  .prod .go{margin-top:auto;padding-top:.8rem;color:var(--amber)}
+
+  .contact{border-top:1px solid var(--line);background:linear-gradient(180deg,var(--deep),var(--void))}
+  .contact .wrap{display:flex;flex-direction:column;gap:2rem}
+  .contact h2{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-.04em;max-width:17ch}
+  .links{display:flex;flex-wrap:wrap;gap:.75rem}
+  .btn{font-family:var(--f-m);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:1rem 1.5rem;border:1px solid var(--line-2);transition:.3s}
+  .btn:hover{border-color:var(--amber);color:var(--amber)}
+  .btn.pri{background:var(--amber);border-color:var(--amber);color:#05070B;font-weight:700}
+  .btn.pri:hover{background:var(--amber-d);border-color:var(--amber-d);color:#fff}
+  .btn.wa:hover{border-color:#25D366;color:#25D366}
+  footer{border-top:1px solid var(--line);padding:2.2rem 0;color:var(--ink-3)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:space-between}
+
+  /* consentimento */
+  #cc{position:fixed;left:var(--pad);right:var(--pad);bottom:1rem;z-index:70;display:none;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;
+    background:rgba(8,12,19,.92);border:1px solid var(--line-2);padding:.95rem 1.15rem;backdrop-filter:blur(10px);max-width:760px;margin:0 auto}
+  #cc.show{display:flex}
+  #cc p{font-size:.86rem;color:var(--ink-2);max-width:46ch;line-height:1.45}
+  #cc .cbtns{display:flex;gap:.5rem}
+  #cc button{font-family:var(--f-m);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:.6rem 1rem;border:1px solid var(--line-2);background:transparent;color:var(--ink-2);cursor:pointer;transition:.25s}
+  #cc button:hover{color:var(--ink);border-color:var(--ink-3)}
+  #cc button.ok{background:var(--amber);border-color:var(--amber);color:#05070B;font-weight:700}
+  #cc button.ok:hover{background:var(--amber-d);border-color:var(--amber-d);color:#fff}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rv,.kick,.thesis,.trio,.social,.shot{opacity:1!important;transform:none!important;transition:none!important}
+    .hero h1 .l i{transform:none!important;transition:none!important}
+    #intro{display:none}
+  }
+</style>
+
+<div id="bar"></div>
+<div id="intro"><span class="cnt">00</span><span class="lbl">Flavio Yukio Maekawa Sena<br>Aichi &middot; Japan</span></div>
+
+<div class="lang" role="group" aria-label="Idioma / Language">
+  <button data-lang="pt" aria-pressed="true">PT</button>
+  <button data-lang="en" aria-pressed="false">EN</button>
+  <button data-lang="ja" aria-pressed="false">日本語</button>
+</div>
+
+<header class="hero" id="hero">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="vig"></div><div class="bars t"></div><div class="bars b"></div>
+  <div class="wrap">
+    <figure class="shot" id="shot">
+      <img src="foto.jpg" alt="Flavio Yukio Maekawa Sena" width="680" height="680" loading="eager" onerror="document.getElementById('shot').style.display='none'">
+      <span class="ring"></span>
+    </figure>
+    <div class="hcol">
+      <p class="kick mono" data-i="kicker">Aichi, Japão &middot; disponível para contrato remoto</p>
+      <h1>
+        <span class="l"><i data-i="h1a">Dos dois lados</i></span>
+        <span class="l"><i class="amb" data-i="h1b">da mesa.</i></span>
+      </h1>
+      <p class="thesis" data-i="thesis">Defino requisito em japonês com o cliente e entrego com time internacional. Anaplan certificado, arquitetura .NET/Azure, mais de dez anos dentro de empresa japonesa.</p>
+      <div class="trio mono"><span><b>日本語</b> nativo</span><span><b>Português</b> nativo</span><span><b>English</b> business</span></div>
+      <div class="social" id="social"></div>
+    </div>
+  </div>
+</header>
+
+<nav class="doors">
+  <a class="door" href="#trabalho" data-ev="door" data-v="recrutador">
+    <span class="idx mono">01</span>
+    <span class="tag mono" data-i="d1tag">Para empresas e recrutadores</span>
+    <h3 data-i="d1h">Contrate para Anaplan, .NET ou a ponte com o Japão</h3>
+    <p data-i="d1p">Model Builder certificado, arquitetura DDD em Azure, e a capacidade rara de conduzir 要件定義 em japonês e entregar em inglês ou português.</p>
+    <span class="go mono" data-i="d1go">Ver competências <em>→</em></span>
+  </a>
+  <a class="door b" href="#produtos" data-ev="door" data-v="negocio">
+    <span class="idx mono">02</span>
+    <span class="tag mono" data-i="d2tag">Para donos de negócio</span>
+    <h3 data-i="d2h">Sistemas para restaurantes e igrejas no Japão</h3>
+    <p data-i="d2p">Software feito para quem vive aqui: contabilidade e folha no padrão japonês, tudo em português, sem precisar de tradutor.</p>
+    <span class="go mono" data-i="d2go">Ver os produtos <em>→</em></span>
+  </a>
+</nav>
+
+<section id="trabalho">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="mono" data-i="k1">01 — Prova</span>
+      <h2 data-i="ph">Prova, não promessa</h2>
+      <p data-i="pp">Números de sistemas que existem e rodam. Nenhum deles é protótipo.</p>
+    </div>
+    <div class="proof rv">
+      <div class="pi"><span class="num">10+</span><span class="lab" data-i="pr1">anos construindo sistemas corporativos no Japão</span></div>
+      <div class="pi"><span class="num">500+</span><span class="lab" data-i="pr2">pessoas usando a camada de coleta que integrei à API do Anaplan</span></div>
+      <div class="pi"><span class="num">30→10</span><span class="lab" data-i="pr3">dias de ciclo de planejamento, depois da reestruturação</span></div>
+      <div class="pi"><span class="num">824</span><span class="lab" data-i="pr4">testes automatizados nos dois produtos que construí sozinho</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="quote rv">
+      <blockquote data-i="q">"Depoimento do dono do Toumorokoshi House entra aqui — em vídeo ou texto."</blockquote>
+      <span class="who mono" data-i="qw">Espaço reservado &middot; <span class="pend" data-i="qp">a gravar</span></span>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="mono" data-i="k2">02 — Capacidades</span>
+      <h2 data-i="ch">O que eu faço</h2>
+    </div>
+    <div class="caps rv">
+      <div class="cap"><span class="n mono">Anaplan</span><h4 data-i="c1h">Planejamento corporativo</h4><p data-i="c1p">Model Builder certificado. Modelos de alocação de pessoal para montadora e de cadeia de suprimentos para fabricante de equipamentos médicos — requisito, desenho, construção e evolução.</p></div>
+      <div class="cap"><span class="n mono">.NET · Azure</span><h4 data-i="c2h">Arquitetura de sistema</h4><p data-i="c2p">DDD em quatro camadas sobre App Service, Azure SQL e SignalR, com TDD em xUnit. Sistema de alocação de posições de aeronaves para grande companhia aérea japonesa.</p></div>
+      <div class="cap"><span class="n mono">JP ↔ Global</span><h4 data-i="c3h">A ponte</h4><p data-i="c3p">Conduzo levantamento direto com o cliente japonês, em japonês, e entrego com time internacional. A maior parte dos projetos que vi falhar falhou nessa junção, não no código.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="produtos" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="mono" data-i="k3">03 — Produtos</span>
+      <h2 data-i="prh">Produtos que eu construí</h2>
+      <p data-i="prp">Dois SaaS verticais, escritos do zero, para quem o mercado japonês esqueceu.</p>
+    </div>
+    <div class="prods rv">
+      <a class="prod" href="https://churchmanagerjp.com/" target="_blank" rel="noopener" data-ev="produto" data-v="church">
+        <span class="status mono"><span class="dot"></span><span data-i="s1">Em operação</span></span>
+        <h3>Church Manager JP</h3>
+        <p data-i="pd1">Gestão de igreja para comunidades estrangeiras no Japão — membros, finanças, atas — e a jornada guiada até o reconhecimento como 宗教法人.</p>
+        <div class="stack"><span>Laravel 12</span><span>Multi-tenant</span><span>PT / JA / EN</span><span>400+ testes</span></div>
+        <span class="go mono">churchmanagerjp.com →</span>
+      </a>
+      <a class="prod" href="https://toumorokoshihouse.com/" target="_blank" rel="noopener" data-ev="produto" data-v="pos">
+        <span class="status mono"><span class="dot"></span><span data-i="s2">Em produção</span></span>
+        <h3 data-i="pd2h">POS &amp; ERP de restaurante</h3>
+        <p data-i="pd2">Do caixa à contabilidade: pedido por QR na mesa, impressora térmica, PayPay e Stripe, folha conforme a lei trabalhista japonesa e loja online.</p>
+        <div class="stack"><span>.NET 10</span><span>React 19</span><span>DDD</span><span>424 testes</span></div>
+        <span class="go mono">toumorokoshihouse.com →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <h2 class="rv" data-i="cth">Se o seu problema está entre o Japão e o resto do mundo, me chame.</h2>
+    <div class="links rv" id="ctas"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap mono">
+    <span>Flavio Yukio Maekawa Sena</span>
+    <span data-i="ft">Aichi, Japão &middot; 2026</span>
+  </div>
+</footer>
+
+<div id="cc" role="dialog" aria-live="polite">
+  <p data-i="ccp">Uso cookies apenas para entender como o site é usado. Nada de anúncios.</p>
+  <div class="cbtns">
+    <button id="ccno" data-i="ccno">Recusar</button>
+    <button id="ccok" class="ok" data-i="ccok">Aceitar</button>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Flavio Yukio Maekawa Sena","jobTitle":"Anaplan Model Builder & .NET Solution Architect","image":"foto.jpg","email":"mailto:yukiosena@gmail.com","address":{"@type":"PostalAddress","addressRegion":"Aichi","addressCountry":"JP"},"knowsLanguage":["ja","pt","en"],"sameAs":["https://www.linkedin.com/in/yukio-sena","https://github.com/senayukio","https://www.instagram.com/yukiosena/","https://www.youtube.com/@YukioSena"]}
+</script>
+
+<script>
+(function(){
+  /* ============================================================
+     CONFIG — preencha os handles. Deixe "" para não exibir o link.
+     ============================================================ */
+  var CFG={
+    email:"yukiosena@gmail.com",
+    linkedin:"https://www.linkedin.com/in/yukio-sena",
+    github:"https://github.com/senayukio",
+    instagram:"https://www.instagram.com/yukiosena/",
+    youtube:"https://www.youtube.com/@YukioSena",
+    whatsapp:"https://wa.me/819099451709",
+    analytics:{ plausible:true, ga4:true, clarity:true, log:false }
+  };
+
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ============================ métricas ============================ */
+  function track(name,props){
+    props=props||{};
+    try{
+      if(CFG.analytics.plausible&&window.plausible) window.plausible(name,{props:props});
+      if(CFG.analytics.ga4&&typeof window.gtag==="function") window.gtag("event",name,props);
+      if(CFG.analytics.clarity&&typeof window.clarity==="function"){
+        window.clarity("event",name);
+        Object.keys(props).forEach(function(k){window.clarity("set",k,String(props[k]))});
+      }
+      if(CFG.analytics.log) console.log("[track]",name,props);
+    }catch(e){}
+  }
+  document.addEventListener("click",function(e){
+    var el=e.target.closest("[data-ev]");
+    if(el) track(el.getAttribute("data-ev"),{valor:el.getAttribute("data-v")||"",idioma:document.documentElement.lang});
+  },true);
+  /* profundidade de rolagem */
+  var marks=[25,50,75,100],hit={};
+  window.addEventListener("scroll",function(){
+    var h=document.documentElement,sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+    marks.forEach(function(m){if(sc>=m&&!hit[m]){hit[m]=1;track("scroll",{profundidade:m})}});
+  },{passive:true});
+  /* tempo engajado */
+  var t0=Date.now(),sent={};
+  setInterval(function(){
+    if(document.hidden)return;
+    var s=Math.round((Date.now()-t0)/1000);
+    [15,45,120].forEach(function(m){if(s>=m&&!sent[m]){sent[m]=1;track("tempo",{segundos:m})}});
+  },5000);
+
+  /* ============================ links ============================ */
+  var L={pt:{},en:{},ja:{}};
+  function build(){
+    var s=document.getElementById("social"),c=document.getElementById("ctas");
+    s.innerHTML="";c.innerHTML="";
+    function a(href,label,cls,ev,v,el){
+      var n=document.createElement("a");
+      n.href=href;n.textContent=label;if(cls)n.className=cls;
+      n.setAttribute("data-ev",ev);n.setAttribute("data-v",v);
+      if(href.indexOf("http")===0){n.target="_blank";n.rel="noopener"}
+      el.appendChild(n);
+    }
+    if(CFG.linkedin) a(CFG.linkedin,"LinkedIn","","social","linkedin",s);
+    if(CFG.github)   a(CFG.github,"GitHub","","social","github",s);
+    if(CFG.instagram)a(CFG.instagram,"Instagram","","social","instagram",s);
+    if(CFG.youtube)  a(CFG.youtube,"YouTube","","social","youtube",s);
+    var T={pt:{mail:"Enviar e-mail",wa:"WhatsApp"},en:{mail:"Send an email",wa:"WhatsApp"},ja:{mail:"メールを送る",wa:"WhatsApp"}};
+    var t=T[document.documentElement.lang==="ja"?"ja":(document.documentElement.lang==="en"?"en":"pt")];
+    if(CFG.email)    a("mailto:"+CFG.email,t.mail,"btn pri","cta","email",c);
+    if(CFG.whatsapp) a(CFG.whatsapp,t.wa,"btn wa","cta","whatsapp",c);
+    if(CFG.linkedin) a(CFG.linkedin,"LinkedIn","btn","cta","linkedin",c);
+    if(CFG.github)   a(CFG.github,"GitHub","btn","cta","github",c);
+    if(CFG.instagram)a(CFG.instagram,"Instagram","btn","cta","instagram",c);
+    if(CFG.youtube)  a(CFG.youtube,"YouTube","btn","cta","youtube",c);
+  }
+
+  /* ============================ i18n ============================ */
+  var D={pt:{},en:{
+    kicker:"Aichi, Japan · available for remote contract",h1a:"Both sides",h1b:"of the table.",
+    thesis:"I run requirements in Japanese with the client and deliver with an international team. Certified Anaplan Model Builder, .NET/Azure architecture, ten-plus years inside Japanese enterprise.",
+    d1tag:"For companies and recruiters",d1h:"Hire me for Anaplan, .NET, or the bridge to Japan",
+    d1p:"Certified Model Builder, DDD architecture on Azure, and the rare ability to run requirements definition in Japanese and deliver in English or Portuguese.",d1go:"See capabilities <em>→</em>",
+    d2tag:"For business owners",d2h:"Systems for restaurants and churches in Japan",
+    d2p:"Software built for people who live here: Japanese accounting and payroll compliance, with the interface in your own language.",d2go:"See the products <em>→</em>",
+    k1:"01 — Proof",ph:"Proof, not promises",pp:"Numbers from systems that exist and run. None of these are prototypes.",
+    pr1:"years building enterprise systems in Japan",pr2:"people using the data collection layer I integrated to the Anaplan API",
+    pr3:"days of planning cycle, after I rebuilt it",pr4:"automated tests across the two products I built alone",
+    q:"\"Testimonial from the owner of Toumorokoshi House goes here — video or text.\"",qw:"Reserved space · ",qp:"to record",
+    k2:"02 — Capabilities",ch:"What I do",
+    c1h:"Enterprise planning",c1p:"Certified Model Builder. Workforce allocation models for a major automotive manufacturer and supply chain planning for a leading medical device maker — requirements, design, build and ongoing evolution.",
+    c2h:"System architecture",c2p:"Four-layer DDD on App Service, Azure SQL and SignalR, with TDD in xUnit. Aircraft stand allocation and prediction system for a major Japanese airline.",
+    c3h:"The bridge",c3p:"I gather requirements directly with the Japanese client, in Japanese, and deliver with an international team. Most failed projects I have seen failed at that seam, not in the code.",
+    k3:"03 — Products",prh:"Products I built",prp:"Two vertical SaaS products, written from scratch, for markets Japan forgot.",
+    s1:"Live",s2:"In production",pd2h:"Restaurant POS &amp; ERP",
+    pd1:"Church management for foreign communities in Japan — members, finances, minutes — plus a guided path to legal recognition as a religious corporation.",
+    pd2:"From till to books: QR table ordering, thermal printer, PayPay and Stripe, labour-law compliant shifts and an online shop.",
+    cth:"If your problem sits between Japan and the rest of the world, get in touch.",ft:"Aichi, Japan · 2026",
+    ccp:"I use cookies only to understand how this site is used. No advertising.",ccno:"Decline",ccok:"Accept"
+  },ja:{
+    kicker:"愛知県 · フルリモート業務委託 対応可",h1a:"要件定義は日本語で。",h1b:"実装は世界と。",
+    thesis:"日本のお客様と日本語で要件を固め、国際チームで実装します。Anaplanモデルビルダー認定、.NET／Azureアーキテクト、日本企業での実務10年以上。",
+    d1tag:"企業・採用担当の方へ",d1h:"Anaplan・.NET・日本と海外の橋渡し",
+    d1p:"モデルビルダー認定、Azure上のDDDアーキテクチャ、そして日本語で要件定義を行い英語・ポルトガル語で実装まで通せる体制。",d1go:"スキルを見る <em>→</em>",
+    d2tag:"事業主の方へ",d2h:"日本の飲食店・教会向けシステム",
+    d2p:"日本の会計・労務に準拠しながら、母語のまま使える業務システムです。",d2go:"製品を見る <em>→</em>",
+    k1:"01 — 実績",ph:"約束ではなく、実績",pp:"実際に稼働しているシステムの数字です。試作はひとつもありません。",
+    pr1:"年以上、日本で業務システムを構築",pr2:"名以上が利用するAnaplan API連携の入力補助基盤",
+    pr3:"日へ短縮した計画サイクル",pr4:"件の自動テスト（単独開発の2製品）",
+    q:"「トウモロコシハウス オーナーの推薦コメントをここに（動画またはテキスト）」",qw:"準備中 · ",qp:"収録予定",
+    k2:"02 — できること",ch:"できること",
+    c1h:"経営計画基盤",c1p:"モデルビルダー認定。大手自動車メーカー向けの人員配置モデル、大手医療機器メーカー向けのサプライチェーン計画モデルを、要件定義から構築・保守まで一貫して担当。",
+    c2h:"システムアーキテクチャ",c2p:"App Service／Azure SQL／SignalR上のDDD4層構成、xUnitによるTDD。大手航空会社向け駐機スポット割当・予測システム。",
+    c3h:"橋渡し",c3p:"日本のお客様と日本語で要件を固め、国際チームで実装します。失敗する案件の多くは、コードではなくこの接続部分で失敗します。",
+    k3:"03 — 製品",prh:"自分で作った製品",prp:"ゼロから開発した、2つの業種特化SaaS。",
+    s1:"稼働中",s2:"本番稼働中",pd2h:"飲食店向けPOS・基幹システム",
+    pd1:"在日外国人コミュニティの教会向け管理システム。会員・会計・議事録に加え、宗教法人の認証取得までを支援します。",
+    pd2:"レジから経営管理まで。QRテーブル注文、サーマルプリンター、PayPay・Stripe、労働法準拠のシフト管理、オンラインショップ。",
+    cth:"日本と海外のあいだにある課題なら、お気軽にご連絡ください。",ft:"愛知県 · 2026",
+    ccp:"サイトの利用状況を把握する目的でのみCookieを使用します。広告には使用しません。",ccno:"拒否する",ccok:"同意する"
+  }};
+  var nodes=[].slice.call(document.querySelectorAll("[data-i]"));
+  nodes.forEach(function(n){D.pt[n.getAttribute("data-i")]=n.innerHTML});
+  var btns=[].slice.call(document.querySelectorAll(".lang button"));
+  function setLang(l,manual){
+    var d=D[l]||D.pt;
+    nodes.forEach(function(n){var k=n.getAttribute("data-i");if(d[k]!==undefined)n.innerHTML=d[k]});
+    btns.forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l))});
+    document.documentElement.lang=l==="ja"?"ja":(l==="en"?"en":"pt-BR");
+    build();
+    if(manual) track("idioma",{escolha:l});
+  }
+  btns.forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang,true)})});
+
+  /* idioma inicial pelo navegador — o público de maior valor lê EN/JA */
+  var nav=(navigator.language||"pt").toLowerCase(), init="pt";
+  if(nav.indexOf("ja")===0) init="ja"; else if(nav.indexOf("pt")!==0) init="en";
+  setLang(init,false);
+  track("visita",{idioma_detectado:init});
+
+  /* ============================ consentimento ============================ */
+  (function(){
+    var box=document.getElementById("cc"),KEY="cc-consent";
+    function apply(v){
+      if(typeof gtag==="function"){
+        gtag('consent','update',{
+          analytics_storage: v==="ok"?'granted':'denied',
+          ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'
+        });
+      }
+    }
+    var saved=null; try{saved=localStorage.getItem(KEY)}catch(e){}
+    if(saved){apply(saved)}
+    else{setTimeout(function(){box.classList.add("show")},2200)}
+    function choose(v){
+      try{localStorage.setItem(KEY,v)}catch(e){}
+      apply(v); box.classList.remove("show"); track("consentimento",{escolha:v});
+    }
+    document.getElementById("ccok").addEventListener("click",function(){choose("ok")});
+    document.getElementById("ccno").addEventListener("click",function(){choose("no")});
+  })();
+
+  /* ============================ cena ============================ */
+  var cv=document.getElementById("field"),ctx=cv.getContext("2d"),W=0,H=0,DPR=1,pts=[],raf=0,drift=0,target=0;
+  var FOV=560,SPEED=reduce?0:0.42;
+  function seed(){
+    pts=[];
+    var small=window.innerWidth<760, n1=small?70:130, n2=small?45:90, n3=small?18:34;
+    for(var i=0;i<n1;i++){var side=i%2?1:-1;pts.push({x:side*(60+Math.random()*14),y:14+Math.random()*5,z:20+i*13+Math.random()*7,c:0,s:1.9})}
+    for(var j=0;j<n2;j++)pts.push({x:(Math.random()-.5)*640,y:10+Math.random()*22,z:60+Math.random()*1650,c:1,s:1.2+Math.random()*1.4});
+    for(var k=0;k<n3;k++)pts.push({x:(Math.random()-.5)*900,y:-40-Math.random()*120,z:300+Math.random()*1500,c:2,s:1});
+  }
+  function size(){DPR=Math.min(window.devicePixelRatio||1,2);W=cv.offsetWidth;H=cv.offsetHeight;cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0)}
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    var g=ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,"#05070B");g.addColorStop(.52,"#0A101B");g.addColorStop(.62,"#131A26");g.addColorStop(1,"#05070B");
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    drift+=(target-drift)*.045;
+    var cx=W/2+drift*46,hy=H*.62;
+    var hg=ctx.createLinearGradient(0,hy-70,0,hy+40);
+    hg.addColorStop(0,"rgba(91,143,214,0)");hg.addColorStop(.7,"rgba(91,143,214,.13)");hg.addColorStop(1,"rgba(91,143,214,0)");
+    ctx.fillStyle=hg;ctx.fillRect(0,hy-70,W,110);
+    ctx.strokeStyle="rgba(150,180,220,.18)";ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(0,hy);ctx.lineTo(W,hy);ctx.stroke();
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];
+      p.z-=SPEED*(p.c===2?.25:1);
+      if(p.z<8)p.z+=p.c===1?1650:(p.c===2?1500:1700);
+      var sc=FOV/p.z,sx=cx+p.x*sc,sy=hy+p.y*sc,r=Math.max(.35,p.s*sc*.42);
+      if(sx<-60||sx>W+60||sy<-40||sy>H+40)continue;
+      var fade=Math.min(1,(1-p.z/1750)*1.5); if(fade<=0)continue;
+      var col=p.c===0?"255,122,51":(p.c===1?"255,160,90":"140,175,220"),a=(p.c===2?.5:1)*fade;
+      var gl=ctx.createRadialGradient(sx,sy,0,sx,sy,r*7);
+      gl.addColorStop(0,"rgba("+col+","+(a*.9)+")");gl.addColorStop(.28,"rgba("+col+","+(a*.28)+")");gl.addColorStop(1,"rgba("+col+",0)");
+      ctx.fillStyle=gl;ctx.beginPath();ctx.arc(sx,sy,r*7,0,6.283);ctx.fill();
+      ctx.fillStyle="rgba("+col+","+Math.min(1,a*1.1)+")";
+      ctx.beginPath();ctx.arc(sx,sy,r,0,6.283);ctx.fill();
+    }
+    if(!reduce)raf=requestAnimationFrame(frame);
+  }
+  size();seed();frame();
+  var rt;window.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){size();seed()},200)});
+  window.addEventListener("pointermove",function(e){target=(e.clientX/window.innerWidth-.5)*2},{passive:true});
+  document.addEventListener("visibilitychange",function(){if(document.hidden){cancelAnimationFrame(raf)}else if(!reduce){raf=requestAnimationFrame(frame)}});
+
+  /* ============================ reveals ============================ */
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -12% 0px",threshold:.12});
+    [].slice.call(document.querySelectorAll(".rv")).forEach(function(n){io.observe(n)});
+  }else{[].slice.call(document.querySelectorAll(".rv")).forEach(function(n){n.classList.add("in")})}
+
+  /* ============================ intro ============================ */
+  var intro=document.getElementById("intro"),cnt=intro.querySelector(".cnt"),bar=document.getElementById("bar"),hero=document.getElementById("hero");
+  if(reduce){hero.classList.add("ready")}
+  else{
+    var v=0,tick=setInterval(function(){
+      v+=Math.random()*9+4;
+      if(v>=100){v=100;clearInterval(tick);setTimeout(function(){intro.classList.add("done");bar.classList.add("done");setTimeout(function(){hero.classList.add("ready")},260)},380)}
+      cnt.textContent=(v<10?"0":"")+Math.floor(v);bar.style.width=v+"%";
+    },95);
+  }
+})();
+</script>
