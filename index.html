@@ -82,6 +82,14 @@
     -webkit-clip-path:circle(50% at 50% 50%);clip-path:circle(50% at 50% 50%);
     filter:contrast(1.07) saturate(.92)}
   .shot .ring{position:absolute;inset:-7%;border:1px solid rgba(255,122,51,.28);border-radius:50%;pointer-events:none}
+  /* O herói ocupa a tela inteira; sem esta marca ele passa por página única. */
+  .cue{position:absolute;z-index:4;right:var(--pad);bottom:calc(var(--pad)*1.2);
+    font-family:var(--f-m);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ink-3);display:flex;align-items:center;gap:.55rem;pointer-events:none;
+    opacity:0;transition:opacity .8s ease 1.3s}
+  .cue em{font-style:normal;display:block;animation:cuedrop 2.1s cubic-bezier(.4,0,.2,1) infinite}
+  .ready .cue{opacity:1}
+  @keyframes cuedrop{0%,100%{transform:translateY(0);opacity:.35}45%{transform:translateY(5px);opacity:1}}
   .ready .kick,.ready .thesis,.ready .trio,.ready .social,.ready .shot{opacity:1;transform:none;transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
   .ready .kick{transition-delay:.15s} .ready .thesis{transition-delay:.55s}
   .ready .trio{transition-delay:.68s} .ready .social{transition-delay:.8s} .ready .shot{transition-delay:.4s}
@@ -179,15 +187,26 @@
     /* As hairlines de letterbox são um floreio de tela grande; no celular
        elas cruzam o seletor de idioma e sujam a composição. */
     .bars{display:none}
-    .scrollcue{display:none}
 
-    .hero .wrap{padding-top:4.5rem;padding-bottom:2.5rem}
+    /* No desktop o texto ocupa metade da largura e as luzes ficam do outro
+       lado. No celular ele atravessa a cena inteira, e o bokeh passa por
+       dentro do parágrafo. Escurece a metade de baixo: o texto sempre ganha. */
+    .vig{background:
+      radial-gradient(130% 70% at 50% 88%, transparent 8%, rgba(5,7,11,.62) 48%, var(--void) 92%),
+      linear-gradient(to bottom, var(--void) 0%, transparent 16%, rgba(5,7,11,.55) 46%, rgba(5,7,11,.93) 82%, var(--void) 100%)}
+
+    .hero .wrap{padding-top:3.6rem;padding-bottom:2.2rem;gap:1.15rem}
+    .hcol{gap:1rem}
     .hero h1{font-size:clamp(2.35rem,12.5vw,3.4rem);letter-spacing:-.035em;max-width:none}
     .thesis{font-size:1rem;line-height:1.55}
     .shot{width:96px}
 
     .trio{gap:.3rem 1rem;font-size:.62rem}
-    .social{gap:.45rem}
+    /* 4 redes em linha viram 3+1 e ficam tortas. 2x2 fecha o bloco. */
+    .social{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;width:100%}
+    .social a{text-align:center;padding:.85rem .6rem}
+
+    .cue{left:50%;transform:translateX(-50%);bottom:.85rem;font-size:.54rem}
 
     .door{min-height:auto;padding:2.1rem var(--pad)}
     .door h3{font-size:1.5rem}
@@ -224,8 +243,9 @@
 
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
-    .rv,.kick,.thesis,.trio,.social,.shot{opacity:1!important;transform:none!important;transition:none!important}
+    .rv,.kick,.thesis,.trio,.social,.shot,.cue{opacity:1!important;transform:none!important;transition:none!important}
     .hero h1 .l i{transform:none!important;transition:none!important}
+    .cue em{animation:none!important}
     #intro{display:none}
   }
 </style>
@@ -258,6 +278,7 @@
       <div class="social" id="social"></div>
     </div>
   </div>
+  <span class="cue" aria-hidden="true"><span data-i="cue">role</span><em>↓</em></span>
 </header>
 
 <nav class="doors">
@@ -459,7 +480,7 @@
 
   /* ============================ i18n ============================ */
   var D={pt:{},en:{
-    kicker:"Aichi, Japan · open to remote contract",h1a:"Fluent in",h1b:"both rooms.",
+    kicker:"Aichi, Japan · open to remote contract",cue:"scroll",h1a:"Fluent in",h1b:"both rooms.",
     thesis:"Ten years inside Japanese enterprise taught me that projects rarely break in the code. They break between the room where the decision is made and the room where it gets built. I work in both.",
     d1tag:"For companies and recruiters",d1h:"Hire me for Anaplan, .NET, or the bridge to Japan",
     d1p:"Certified Model Builder, DDD architecture on Azure, and the rare ability to run requirements definition in Japanese and deliver in English or Portuguese.",d1go:"See capabilities <em>→</em>",
@@ -480,7 +501,7 @@
     cth:"If your problem lives between Japan and everywhere else, that is my job.",ft:"Aichi, Japan · 2026",
     ccp:"I use cookies only to understand how this site is used. No advertising.",ccno:"Decline",ccok:"Accept"
   },ja:{
-    kicker:"愛知県 · フルリモート業務委託 対応可",h1a:"通じるから、",h1b:"動く。",
+    kicker:"愛知県 · フルリモート業務委託 対応可",cue:"スクロール",h1a:"通じるから、",h1b:"動く。",
     thesis:"止まる案件のほとんどは、コードではなく言葉で止まります。日本語で要件を固め、国際チームで実装する。Anaplanモデルビルダー認定、.NET／Azureアーキテクト、日本企業での実務10年以上。",
     d1tag:"企業・採用担当の方へ",d1h:"Anaplan・.NET・日本と海外の橋渡し",
     d1p:"モデルビルダー認定、Azure上のDDDアーキテクチャ、そして日本語で要件定義を行い英語・ポルトガル語で実装まで通せる体制。",d1go:"スキルを見る <em>→</em>",
