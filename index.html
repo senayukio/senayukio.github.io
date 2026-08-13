@@ -32,8 +32,9 @@
     --wide:min(1240px,100%); --pad:clamp(1.15rem,5vw,3.5rem);
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--void);color:var(--ink);font-family:var(--f-b);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{margin:0;background:var(--void);color:var(--ink);font-family:var(--f-b);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+    -webkit-tap-highlight-color:rgba(255,122,51,.18)}
   h1,h2,h3,h4{font-family:var(--f-d);margin:0;line-height:1.02;text-wrap:balance}
   p{margin:0} a{color:inherit;text-decoration:none}
   a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:4px}
@@ -53,7 +54,7 @@
   .lang button[aria-pressed="true"]{background:var(--amber);color:#05070B;font-weight:700}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
   #field{position:absolute;inset:0;width:100%;height:100%}
   .vig{position:absolute;inset:0;pointer-events:none;background:
     radial-gradient(120% 85% at 50% 78%, transparent 25%, rgba(5,7,11,.55) 62%, var(--void) 96%),
@@ -166,6 +167,60 @@
   #cc button:hover{color:var(--ink);border-color:var(--ink-3)}
   #cc button.ok{background:var(--amber);border-color:var(--amber);color:#05070B;font-weight:700}
   #cc button.ok:hover{background:var(--amber-d);border-color:var(--amber-d);color:#fff}
+
+  /* ============================ celular ============================ */
+  @media (max-width:760px){
+    /* Alvo de toque: mínimo 44px de altura em tudo que se clica. */
+    .lang button{padding:.85rem .95rem;font-size:.68rem}
+    .social a{padding:.8rem 1rem;font-size:.66rem}
+    .btn{padding:1.05rem 1.35rem;width:100%;text-align:center}
+    .btn.ghost{width:auto;padding:.85rem .9rem}
+
+    /* As hairlines de letterbox são um floreio de tela grande; no celular
+       elas cruzam o seletor de idioma e sujam a composição. */
+    .bars{display:none}
+    .scrollcue{display:none}
+
+    .hero .wrap{padding-top:4.5rem;padding-bottom:2.5rem}
+    .hero h1{font-size:clamp(2.35rem,12.5vw,3.4rem);letter-spacing:-.035em;max-width:none}
+    .thesis{font-size:1rem;line-height:1.55}
+    .shot{width:96px}
+
+    .trio{gap:.3rem 1rem;font-size:.62rem}
+    .social{gap:.45rem}
+
+    .door{min-height:auto;padding:2.1rem var(--pad)}
+    .door h3{font-size:1.5rem}
+
+    .head h2{font-size:clamp(1.75rem,7.5vw,2.4rem)}
+    .contact h2{font-size:clamp(1.85rem,8.5vw,2.6rem)}
+
+    .links{flex-direction:column;align-items:stretch;gap:.6rem}
+    .links .btn.ghost{align-self:flex-start}
+
+    /* Banner de consentimento empilhado — em linha ele espreme o texto. */
+    #cc{flex-direction:column;align-items:stretch;gap:.85rem;padding:1rem;bottom:.75rem;
+      left:.75rem;right:.75rem}
+    #cc p{max-width:none;font-size:.82rem}
+    #cc .cbtns{gap:.5rem}
+    #cc button{flex:1;padding:.8rem .6rem}
+
+    footer .wrap{flex-direction:column;gap:.5rem}
+  }
+
+  /* Telas muito estreitas (iPhone SE e similares). */
+  @media (max-width:380px){
+    .hero h1{font-size:2.15rem}
+    .shot{width:84px}
+    .stack span{font-size:.58rem}
+  }
+
+  /* Sem hover real: os estados de toque precisam existir mesmo assim. */
+  @media (hover:none){
+    .prod:active{border-color:var(--amber);transform:translateY(-2px)}
+    .prod:active::after{opacity:1}
+    .door:active::before{opacity:1}
+  }
 
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -497,7 +552,13 @@
     for(var j=0;j<n2;j++)pts.push({x:(Math.random()-.5)*640,y:10+Math.random()*22,z:60+Math.random()*1650,c:1,s:1.2+Math.random()*1.4});
     for(var k=0;k<n3;k++)pts.push({x:(Math.random()-.5)*900,y:-40-Math.random()*120,z:300+Math.random()*1500,c:2,s:1});
   }
-  function size(){DPR=Math.min(window.devicePixelRatio||1,2);W=cv.offsetWidth;H=cv.offsetHeight;cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0)}
+  /* Densidade limitada no celular: a 3x um telefone renderiza 9x mais pixels
+     por quadro do que precisa, e o resultado é ventoinha e scroll travado. */
+  function size(){
+    var cap=window.innerWidth<760?1.5:2;
+    DPR=Math.min(window.devicePixelRatio||1,cap);
+    W=cv.offsetWidth;H=cv.offsetHeight;cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
+  }
   function frame(){
     ctx.clearRect(0,0,W,H);
     var g=ctx.createLinearGradient(0,0,0,H);
@@ -526,10 +587,35 @@
     }
     if(!reduce)raf=requestAnimationFrame(frame);
   }
-  size();seed();frame();
-  var rt;window.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){size();seed()},200)});
-  window.addEventListener("pointermove",function(e){target=(e.clientX/window.innerWidth-.5)*2},{passive:true});
-  document.addEventListener("visibilitychange",function(){if(document.hidden){cancelAnimationFrame(raf)}else if(!reduce){raf=requestAnimationFrame(frame)}});
+  var running=false;
+  function start(){if(running||reduce)return;running=true;raf=requestAnimationFrame(frame)}
+  function stop(){running=false;cancelAnimationFrame(raf)}
+
+  size();seed();
+  if(reduce){frame()}else{start()}
+
+  /* Só redimensiona de verdade quando a largura muda. No iOS a barra de
+     endereço encolhe ao rolar e dispara resize a cada quadro — reconstruir a
+     cena aí é o caminho mais rápido para o scroll engasgar. */
+  var rt,lastW=window.innerWidth;
+  window.addEventListener("resize",function(){
+    if(window.innerWidth===lastW)return;
+    lastW=window.innerWidth;
+    clearTimeout(rt);rt=setTimeout(function(){size();seed()},200);
+  });
+
+  /* Paralaxe só onde existe mouse. */
+  if(window.matchMedia("(hover:hover)").matches)
+    window.addEventListener("pointermove",function(e){target=(e.clientX/window.innerWidth-.5)*2},{passive:true});
+
+  document.addEventListener("visibilitychange",function(){document.hidden?stop():start()});
+
+  /* Fora da tela, a cena para. Rolou para os produtos, nada é desenhado. */
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){e.isIntersecting?start():stop()});
+    },{threshold:.01}).observe(cv);
+  }
 
   /* ============================ reveals ============================ */
   if("IntersectionObserver" in window){
